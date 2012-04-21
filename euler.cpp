@@ -88,6 +88,22 @@ int main(int argc, char** argv) {
             
             printf("%d\n", tot);
             
+        } else if(strcmp(ex, "7") == 0) {
+            bool primes [1000000];
+            int numPrime = 0;
+            for(long i = 2; i < 1000000; i++) {
+                if(!primes[i]) {
+                    numPrime++;
+                    if(numPrime == 10001) {
+                        printf("%ld\n", i);
+                        break;
+                    }
+                    for(long j = i; j < 1000000; j += i) {
+                        primes[j] = true;
+                    }
+                }
+            }
+            
         }
     }
 }
