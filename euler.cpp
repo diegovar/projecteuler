@@ -9,11 +9,11 @@ int main(int argc, char** argv) {
     if(argc > 1) {
         char * ex = argv[1];
 
-        if(strcmp(ex, "0") == 0) {
+        if(strcmp(ex, "1") == 0) {
             
             printf("%d\n", 3*333*334/2 + 5*199*200/2 - 15*66*67/2);
             
-        } else if(strcmp(ex, "1") == 0) {
+        } else if(strcmp(ex, "2") == 0) {
             
             unsigned int prev = 1;
             unsigned int current = 2;
@@ -28,7 +28,7 @@ int main(int argc, char** argv) {
             }
             printf("%d\n", evenSum);
             
-        } else if(strcmp(ex, "2") == 0) {
+        } else if(strcmp(ex, "3") == 0) {
             
             long number = 600851475143;
             long root = 775146;
@@ -48,7 +48,7 @@ int main(int argc, char** argv) {
             
             printf("%ld\n", highestPrime);
             
-        } else if(strcmp(ex, "3") == 0) {
+        } else if(strcmp(ex, "4") == 0) {
             
             int i = 999;
             long max = 0;
@@ -72,6 +72,8 @@ int main(int argc, char** argv) {
                 i--;
             }
             printf("%ld\n", max);
+        } else if(strcmp(ex, "5") == 0) {
+            printf("%d\n", 2*2*2*2*3*3*5*7*11*13*17*19);
         }
     }
 }
