@@ -1,1 +1,16 @@
+<<<<<<< HEAD
 euler
+=======
+# Compiled Object files
+*.slo
+*.lo
+*.o
+
+# Compiled Dynamic libraries
+*.so
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+>>>>>>> eb0e59196a866911c3411ce1541db747bf8b2cd1
