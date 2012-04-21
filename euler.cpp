@@ -72,8 +72,25 @@ int main(int argc, char** argv) {
                 i--;
             }
             printf("%ld\n", max);
+            
         } else if(strcmp(ex, "5") == 0) {
+            
             printf("%d\n", 2*2*2*2*3*3*5*7*11*13*17*19);
+            
+        } else if(strcmp(ex, "6") == 0) {
+            
+            int tot = 0;
+            for(int i = 1; i <= 100; i++) {
+                for(int j = 1; j <= 100; j++) {
+                    tot += i == j ? 0 : i*j;
+                }
+            }
+            
+            printf("%d\n", tot);
+            
         }
     }
 }
+
+
+
