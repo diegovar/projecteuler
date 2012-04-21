@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -47,6 +48,30 @@ int main(int argc, char** argv) {
             
             printf("%ld\n", highestPrime);
             
+        } else if(strcmp(ex, "3") == 0) {
+            
+            int i = 999;
+            long max = 0;
+            while (i > 111) {
+                int j = 999;
+                while (j > 111) {
+                    int num = i*j;
+                    string s;
+                    stringstream out;
+                    out << num;
+                    s = out.str();
+                    bool palindrome = true;
+                    for (int k = 0; k <= s.length() / 2; k++) {
+                        palindrome = palindrome && s.at(k) == s.at(s.length()-1-k);
+                    }
+                    if(palindrome && num > max) {
+                        max = num;
+                    }
+                    j--;
+                }
+                i--;
+            }
+            printf("%ld\n", max);
         }
     }
 }
