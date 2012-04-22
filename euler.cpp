@@ -6,32 +6,6 @@
 
 using namespace std;
 
-int main(int argc, char** argv) {
-    if(argc > 1) {
-        char * ex = argv[1];
-
-        if(strcmp(ex, "1") == 0) {
-            euler1();
-        } else if(strcmp(ex, "2") == 0) {
-            euler2();
-        } else if(strcmp(ex, "3") == 0) {
-            euler3();            
-        } else if(strcmp(ex, "4") == 0) {
-            euler4();
-        } else if(strcmp(ex, "5") == 0) {
-            euler5();
-        } else if(strcmp(ex, "6") == 0) {
-            euler6();
-        } else if(strcmp(ex, "7") == 0) {
-            euler7();
-        } else if(strcmp(ex, "8") == 0) {
-            euler8();
-        } else if(strcmp(ex, "9") == 0) {
-            euler9();
-        }
-    }
-}
-
 void euler1() {
     printf("%d\n", 3*333*334/2 + 5*199*200/2 - 15*66*67/2);
 }
@@ -151,6 +125,54 @@ void euler9() {
                 found = true;
                 printf("(%d, %d, %f). Product = %f\n", i, j, floor(root), i*j*root);
             }
+        }
+    }
+}
+
+void euler10() {
+    int max = 2000000;
+    bool primes [max];
+    for (int i = 0; i < max; i++) {
+        primes[i] = false;
+    }
+    long long sum = 0;
+    long count = 0;
+    for(int i = 2; i < max; i++) {
+        if(!primes[i]) {
+            sum += i;
+            count++;
+            for(int j = i; j < max; j += i) {
+                primes[j] = true;
+            }
+        }
+    }
+    printf("count: %ld, sum: %lld\n", count, sum);
+}
+
+int main(int argc, char** argv) {
+    if(argc > 1) {
+        char * ex = argv[1];
+        
+        if(strcmp(ex, "1") == 0) {
+            euler1();
+        } else if(strcmp(ex, "2") == 0) {
+            euler2();
+        } else if(strcmp(ex, "3") == 0) {
+            euler3();            
+        } else if(strcmp(ex, "4") == 0) {
+            euler4();
+        } else if(strcmp(ex, "5") == 0) {
+            euler5();
+        } else if(strcmp(ex, "6") == 0) {
+            euler6();
+        } else if(strcmp(ex, "7") == 0) {
+            euler7();
+        } else if(strcmp(ex, "8") == 0) {
+            euler8();
+        } else if(strcmp(ex, "9") == 0) {
+            euler9();
+        } else if(strcmp(ex, "10") == 0) {
+            euler10();
         }
     }
 }
