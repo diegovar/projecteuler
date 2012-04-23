@@ -168,6 +168,36 @@ void euler11() {
     printf("%d\n", maxN);
 }
 
+void euler12() {
+    
+    long long count = 1;
+    long long i = 1;
+    long long maxDivisors = 0;
+    while (true) {
+        //if(i > 30) break;
+        long long divisors = 1;
+        long long num = i;
+        for (long long j = 2; j <= i; j++) {
+            long long factorExp = 0;
+            while (num % j == 0) {
+                factorExp++;
+                num /= j;
+            }
+            divisors *= (factorExp + 1);
+        }
+        //printf("divisors: %d\n", divisors);
+        if(divisors > maxDivisors) {
+            printf("number: %lld, maxdivisors: %lld\n", i, divisors);
+            maxDivisors = divisors;
+        }
+        if(divisors > 500)
+            break;
+        i += count+1;
+        count++;
+    }
+    
+}
+
 int main(int argc, char** argv) {
     if(argc > 1) {
         char * ex = argv[1];
@@ -194,6 +224,8 @@ int main(int argc, char** argv) {
             euler10();
         } else if(strcmp(ex, "11") == 0) {
             euler11();
+        } else if(strcmp(ex, "12") == 0) {
+            euler12();
         }
     }
 }
